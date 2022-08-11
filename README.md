@@ -27,24 +27,15 @@ To use this project, first clone the repo on your device using the commands belo
 ## Running
 The whole project is implemented in [Julia](https://docs.julialang.org/en/v1/). Julia allows for rapid calculation of gradients through the whole dynamic system. 
 
-This is project is an 'unregistered package'. To run the project
+This project is an 'unregistered package'. To run the project
 
-1. Download [Julia 1.6](https://julialang.org/downloads/#long_term_support_release). Note that there might be compatibility problems to run the code in newer Julia versions. 
+1. Download [Julia 1.6](https://julialang.org/downloads/#long_term_support_release). Note that there might be compatibility problems running the code in newer Julia versions. 
 2. cd to the folder where you want to clone the project.
 3. clone the repo on your device
 ```
 git init
 git clone https://github.com/adrianaprotondo/CerebellarMotorLearning_2.git
 ```
-
-4. Open a Julia terminal. 
-   
-   1. **On VSCode** The easiest is to install the [Julia client](https://github.com/julia-vscode/julia-vscode#installing-juliavs-codevs-code-julia-extension) in [VSCode](https://code.visualstudio.com/Download).
-   2. You can also just use a normal terminal. In the latter case, make sure you add and use Revise.jl before doing anything else. 
-      ```
-      ]
-      add Revise
-      ```
 
 3. Running the code. There are multiple ways to run the code. 
 Remember that in Julia, the first time you use a package it takes a really long time in Julia (compiling). Same for functions and plotting. But the second time is really quick.
@@ -54,26 +45,32 @@ To run notebooks found in `notebooks/` folder.
 
 #### With VSCode
 
-1. Open VSCode
-2. Add the [Jupyter extension to VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
-3.  Open the project folder `CerebellarMotorLearning`  
-4.  Open one of the .ipynb in `notebooks/`
-5.  Select the `Julia-1.6` kernel
-6.  You can now run the cells 
+1. Open or download [VSCode](https://code.visualstudio.com/Download). 
+2. Install the [Julia client](https://github.com/julia-vscode/julia-vscode#installing-juliavs-codevs-code-julia-extension)
+3. Add the [Jupyter extension to VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
+4. Open the project folder `CerebellarMotorLearning_2`  
+5. Open one of the .ipynb in `notebooks/`
+6. Select the `Julia-1.6` kernel
+7. You can now run the cells could take up to 10mins for the first compilation.
 
 #### On a terminal
-1. Go to the project folder `CerebellarMotorLearning` 
+1. Go to the project folder `CerebellarMotorLearning_2` 
 2. Open a julia terminal by typing `julia` or `julia-1.6`
-2. Install [IJulia](https://github.com/JuliaLang/IJulia.jl#quick-start) 
+3. Make sure you add and use Revise.jl before doing anything else. 
+    ```
+    ]
+    add Revise
+    ```
+4. Install [IJulia](https://github.com/JuliaLang/IJulia.jl#quick-start) 
     ``` 
     ] 
     add IJulia
     ```
 3. If you already have Python/Jupyter installed on your machine, you can then launch the notebook server the usual way by running `jupyter notebook` in the terminal. otherwise type the following on the Julia terminal
-      ```
-      using IJulia
-      notebook()  
-      ```
+    ```
+    using IJulia
+    notebook()  
+    ```
 
 <!-- Add Pluto package
 ```
@@ -89,11 +86,17 @@ Pluto.run()
 
 ### Running scripts 
 To run scripts like `scripts/testSize_static_Ls_SS_ssFromMin_analyse.jl` 
+
 #### In VSCode
 In VSCode you can directly open one of the scripts and run `Julia:Execute active File in new REPL`
   
 #### In Julia terminal
-In a julia terminal, ']' switches to the package manager, and ';' switches to the shell. If you switch to the package manager and write
+In a julia terminal, ']' switches to the package manager, and ';' switches to the shell. If you switch to the package manager and add Revise
+```
+]
+add Revise
+```
+then activate the project
 ```
 ]
 activate . 
