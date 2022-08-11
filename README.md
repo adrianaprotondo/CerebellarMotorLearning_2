@@ -5,7 +5,7 @@
 This is a simple implementation of the motor control system above. A feedforward (cerebellar cortex) and feedback system (motor cortex) control a plant (musculoskeletal system). The task is for the output of the plant $y(t)$ to match a reference trajectory $r(t)$. 
 The cerebellar cortex module can adapt its weights online, while controlling the plant, to improve its internal model of the plant. 
 
-The main goal is to evaluate learning performance for different network architectures of the cerebellar cortex module. We test different learning rules for the weights of the cerebellar-like network. 
+The main goal is to evaluate learning performance for different network architectures of the cerebellar cortex module. We test different learning rules for the update of the the cerebellar-like network output weights.  
 
 It is 'plug and play' in the sense that you can create, swap, and connect components easily. You can implement different forms of plants, reference trajectories, and controllers. 
 It's pretty easy to create your own components by adding to the `types.jl` and  `systemComponents_functions.jl` page.
@@ -188,3 +188,6 @@ We can increase $\Delta t_r$ and the gap between $\Delta t_h$ to introduce error
     - runtime for train doesn't depend too much on the trajectory time, more on the size of the net N. (16s frp N=10 but 336s for N=50)
     - even if we don't have updates (i.e. no callbacks) sol times still takes a lot of time to compute for large Ns (119s for N=50 no updates). ODEprob takes fraction of the time for large nets (4.5s for N=50) -->
     
+  ## Work in process
+  - Adding the option of random reference trajectories $r(t)$ generated from a filtered Ornstein-Uhlenbeck process. 
+  - Adding the option of a RNN implementation for the plant. 
