@@ -34,7 +34,7 @@ This is project is an 'unregistered package'. To run the project
 3. clone the repo on your device
 ```
 git init
-git clone https://github.com/adrianaprotondo/CerebellarMotorLearning.git
+git clone https://github.com/adrianaprotondo/CerebellarMotorLearning_2.git
 ```
 
 4. Open a Julia terminal. 
