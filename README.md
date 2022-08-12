@@ -71,6 +71,7 @@ To run notebooks found in `notebooks/` folder.
     using IJulia
     notebook()  
     ```
+4. Navigate to open the notebook and select the `Julia-1.6` kernel 
 
 <!-- Add Pluto package
 ```
